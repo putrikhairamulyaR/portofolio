@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>House Price Prediction | Putri Khairamulya Ramadhini</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #f8fafc;
+      color: #334155;
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: 72%;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    /* HEADER */
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .navbar {
+      width: 72%;
+      max-width: 950px;
+      margin: 0 auto;
+      min-height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #111827;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #4b5563;
+    }
+
+    .nav-links a:hover {
+      color: #2563eb;
+      transition: 0.2s;
+    }
+
+    /* PAGE HEADER */
+    .page-header {
+      padding: 32px 0 18px;
+      text-align: center;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #eff6ff;
+      color: #2563eb;
+      border-radius: 999px;
+      padding: 5px 11px;
+      font-size: 10.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+    }
+
+    .page-header h1 {
+      font-size: 28px;
+      color: #111827;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    .page-header p {
+      color: #4b5563;
+      font-size: 13.5px;
+      max-width: 580px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* HERO IMAGE */
+    .hero-image {
+      width: 100%;
+      max-width: 380px;
+      height: auto;
+      max-height: 220px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 12px;
+      margin: 0 auto 32px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    /* CONTENT CARD */
+    .content-card {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 18px;
+      padding: 22px;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.04);
+    }
+
+    .content-card h2 {
+      font-size: 18px;
+      color: #111827;
+      margin-bottom: 11px;
+    }
+
+    .content-card p {
+      color: #4b5563;
+      font-size: 13.5px;
+      line-height: 1.75;
+      margin-bottom: 12px;
+    }
+
+    .content-card ul {
+      margin-left: 20px;
+      padding-left: 4px;
+    }
+
+    .content-card li {
+      margin-bottom: 7px;
+      color: #4b5563;
+      font-size: 13.5px;
+      line-height: 1.7;
+    }
+
+    .content-card strong {
+      background-color: #eff6ff;
+      color: #1d4ed8;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    /* FEATURE CHIPS */
+    .feature-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin: 14px 0 18px;
+    }
+
+    .feature-grid span,
+    .tools-list span {
+      background: #eff6ff;
+      color: #2563eb;
+      border: 1px solid #bfdbfe;
+      border-radius: 999px;
+      padding: 6px 11px;
+      font-size: 11.5px;
+      font-weight: 700;
+    }
+
+    /* TOOLS */
+    .tools-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 8px;
+    }
+
+    /* RESULTS */
+    .result-image {
+      width: 85%;
+      max-width: 640px;
+      margin: 16px auto 20px;
+      border-radius: 14px;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+    }
+
+    .result-table-wrapper {
+      overflow-x: auto;
+      margin: 16px 0 18px;
+    }
+
+    .result-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12.5px;
+      color: #374151;
+    }
+
+    .result-table th {
+      background: #eff6ff;
+      color: #1e3a8a;
+      font-weight: 800;
+      padding: 9px;
+      border: 1px solid #dbeafe;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .result-table td {
+      padding: 9px;
+      border: 1px solid #e5e7eb;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .result-table td:first-child {
+      font-weight: 700;
+      color: #111827;
+      text-align: left;
+    }
+
+    .result-note {
+      background: #eff6ff;
+      border-left: 4px solid #3b82f6;
+      padding: 16px;
+      border-radius: 0 8px 8px 0;
+      margin-top: 24px;
+      font-size: 14px;
+      line-height: 1.7;
+      color: #1e3a8a;
+    }
+
+    .result-note strong {
+      background-color: transparent;
+      color: #1d4ed8;
+      padding: 0;
+    }
+
+    /* BUTTON */
+    .project-link,
+    .back-link {
+      display: inline-block;
+      padding: 9px 15px;
+      border-radius: 10px;
+      font-size: 12.5px;
+      font-weight: 700;
+      transition: 0.2s;
+    }
+
+    .project-link {
+      background: #2563eb;
+      color: #ffffff;
+      margin-top: 6px;
+    }
+
+    .project-link:hover {
+      background: #1d4ed8;
+    }
+
+    .back-link {
+      margin-bottom: 42px;
+      background: #ffffff;
+      border: 1px solid #d1d5db;
+      color: #374151;
+    }
+
+    .back-link:hover {
+      background: #f3f4f6;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid #e5e7eb;
+      padding: 18px 0;
+      color: #6b7280;
+      font-size: 12px;
+      background: #ffffff;
+    }
+
+    /* MOBILE */
+    @media (max-width: 760px) {
+
+      .container,
+      .navbar {
+        width: 92%;
+      }
+
+      .navbar {
+        padding: 16px 0;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 12px;
+        font-size: 11px;
+      }
+
+      .page-header {
+        padding: 28px 0 18px;
+        text-align: left;
+      }
+
+      .page-header h1 {
+        font-size: 26px;
+      }
+
+      .page-header p {
+        margin: 0;
+      }
+
+      .hero-image {
+        width: 100%;
+        height: 220px;
+      }
+
+      .content-card {
+        padding: 18px;
+      }
+
+      .content-card h2 {
+        font-size: 17px;
+      }
+
+      .content-card p,
+      .content-card li {
+        font-size: 13px;
+      }
+
+      .result-image {
+        width: 100%;
+      }
+
+      .result-table {
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="navbar">
+      <a href="index.html" class="brand">
+        Putri Khairamulya Ramadhini
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="https://github.com/putrikhairamulyaR" target="_blank">Github</a>
+        <a href="https://www.linkedin.com/in/putri-khairamulya-ramadhini-48692b2a8" target="_blank">LinkedIn</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="container">
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+      <h1>House Price Prediction</h1>
+      <p>
+        An end-to-end machine learning project to estimate fair market property values using Linear Regression and
+        Streamlit.
+      </p>
+    </section>
+
+    <!-- HERO IMAGE -->
+    <img class="hero-image" src="image/rumah.jpg" alt="House Price Prediction">
+
+    <!-- OVERVIEW -->
+    <section class="content-card">
+      <h2>📌 Project Overview</h2>
+
+      <p>
+        <em>"A newer house is not always more expensive, and an older house is not always cheaper."</em>
+      </p>
+
+      <p>
+        In today's real estate market, various developer incentives and marketing strategies can make newly built homes
+        surprisingly affordable. As a result, property prices are influenced by far more than just the age of the house.
+        Factors such as square footage, number of bedrooms, number of bathrooms, lot size, garage capacity, and
+        neighborhood quality often play a much greater role in determining a property's value. Therefore, a data-driven
+        analysis is essential to identify which factors have the strongest impact on house prices and to support more
+        accurate property valuation.
+      </p>
+
+      <p>
+        This project utilizes historical housing data to build a predictive model. It takes into account key property
+        characteristics such as <strong>Square Footage, Lot Size, Year Built, Number of Bedrooms and Bathrooms, Garage
+          Size, and Neighborhood Quality</strong>. By deploying this model via an interactive Streamlit web application,
+        users can easily input these specifications and receive an instant, data-driven price estimation.
+      </p>
+    </section>
+
+    <!-- OBJECTIVES -->
+    <section class="content-card">
+      <h2>🎯 Project Objectives</h2>
+
+      <ul>
+        <li>Perform Exploratory Data Analysis (EDA) to identify factors most correlated with house prices.</li>
+        <li>Build and train a <strong>Linear Regression</strong> model to predict continuous property values.</li>
+        <li>Deploy the trained model into a user-friendly <strong>Streamlit Web App</strong> for real-time inference.
+        </li>
+      </ul>
+    </section>
+
+    <!-- EDA AND ANALYSIS -->
+    <section class="content-card">
+      <h2>🧾 EDA and Features</h2>
+
+      <p>
+        The exploratory data analysis focuses on finding linear correlations between property features and the final
+        house price, analyzing the distribution of house ages, sizes, and neighborhood impact.
+      </p>
+
+      <div class="feature-grid">
+        <span>Square Footage</span>
+        <span>Num Bedrooms</span>
+        <span>Num Bathrooms</span>
+        <span>Year Built</span>
+        <span>Lot Size</span>
+        <span>Garage Size</span>
+        <span>Neighborhood Quality</span>
+        <span>Age Category</span>
+        <span>Size Category</span>
+        <span>Lot Category</span>
+      </div>
+
+      <a class="project-link" href="File/EDA%20Rumah.pdf" target="_blank">
+        View Full EDA Report
+      </a>
+
+    </section>
+
+    <!-- TOOLS -->
+    <section class="content-card">
+      <h2>🛠 Tools & Technologies</h2>
+
+      <div class="tools-list">
+        <span>Python</span>
+        <span>Pandas</span>
+        <span>NumPy</span>
+        <span>Matplotlib</span>
+        <span>Seaborn</span>
+        <span>Scikit-Learn</span>
+        <span>Streamlit</span>
+        <span>Joblib</span>
+      </div>
+    </section>
+
+    <!-- RESULTS -->
+    <section class="content-card">
+      <h2>📈 Results & Insights</h2>
+
+      <p>
+        We compared three different algorithms to predict housing prices: <strong>Linear Regression</strong>,
+        <strong>Decision Tree</strong>, and <strong>Random Forest</strong>. The evaluation demonstrated that factors
+        like Square Footage, Neighborhood Quality, and Lot Size have the most significant impact on the final valuation.
+      </p>
+
+      <div class="result-table-wrapper">
+        <table class="result-table">
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>MAE</th>
+              <th>RMSE</th>
+              <th>R² Score</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Linear Regression</td>
+              <td>8,230.50</td>
+              <td>10,078.25</td>
+              <td>0.9984</td>
+            </tr>
+            <tr>
+              <td>Decision Tree</td>
+              <td>22,204.38</td>
+              <td>28,041.87</td>
+              <td>0.9878</td>
+            </tr>
+            <tr>
+              <td>Random Forest</td>
+              <td>16,470.59</td>
+              <td>19,761.61</td>
+              <td>0.9939</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="result-note">
+        <strong>App Deployment:</strong> The best-performing model pipeline was exported using <code>joblib</code> and
+        integrated
+        into a professional Streamlit application, allowing users to get instant housing estimations through an
+        intuitive Enterprise UI.
+      </p>
+
+      <img class="result-image" src="image/tampilan streamlit.jpeg" alt="Streamlit Application Interface">
+
+      <a class="project-link" href="https://github.com/putrikhairamulyaR/prediksi-rumah" target="_blank">
+        View Code on GitHub
+      </a>
+    </section>
+
+    <!-- BACK -->
+    <a class="back-link" href="index.html">
+      Back to Home
+    </a>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      © 2025 Putri Khairamulya Ramadhini. All rights reserved.
+    </div>
+  </footer>
+
+</body>
+
+</html>

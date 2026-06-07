@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Projects | Putri Khairamulya Ramadhini</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f8fa;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: 64%;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    /* HEADER */
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .navbar {
+      min-height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #111827;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 15px;
+      font-size: 10.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #374151;
+    }
+
+    .nav-links a:hover {
+      color: #2563eb;
+    }
+
+    /* SECTION HEADER */
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      margin-top: 30px;
+      margin-bottom: 13px;
+    }
+
+    .section-header h2 {
+      font-size: 19px;
+      color: #111827;
+    }
+
+    .section-header span {
+      color: #6b7280;
+      font-size: 11.5px;
+      font-weight: 600;
+    }
+
+    /* FILTER */
+    .filter-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-bottom: 22px;
+    }
+
+    .filter-btn {
+      border: 1px solid #dbeafe;
+      background: #ffffff;
+      color: #2563eb;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 10.5px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: #2563eb;
+      color: #ffffff;
+      border-color: #2563eb;
+    }
+
+    /* PROJECT GROUP */
+    .project-group {
+      margin-bottom: 38px;
+    }
+
+    .group-title {
+      font-size: 14.5px;
+      color: #111827;
+      margin-bottom: 13px;
+      padding-left: 9px;
+      border-left: 4px solid #2563eb;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 280px);
+      justify-content: center;
+      gap: 18px;
+      margin-bottom: 55px;
+    }
+
+    /* CARD */
+    .card {
+      width: 280px;
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      overflow: hidden;
+      transition: 0.25s ease;
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.05);
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 28px rgba(15, 23, 42, 0.10);
+    }
+
+    .card img {
+      width: 100%;
+      height: 115px;
+      object-fit: cover;
+      object-position: center;
+      background: #f3f4f6;
+    }
+
+    .card-content {
+      padding: 13px;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-bottom: 9px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #eff6ff;
+      color: #2563eb;
+      font-size: 9px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 4px 7px;
+      border-radius: 999px;
+      border: 1px solid #bfdbfe;
+    }
+
+    .card h3 {
+      font-size: 14.5px;
+      color: #111827;
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+
+    .card p {
+      color: #4b5563;
+      font-size: 12px;
+      margin-bottom: 11px;
+      line-height: 1.55;
+    }
+
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #6b7280;
+      font-size: 11px;
+      border-top: 1px solid #f0f0f0;
+      padding-top: 10px;
+    }
+
+    .read-more {
+      color: #2563eb;
+      font-weight: 700;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid #e5e7eb;
+      padding: 18px 0;
+      color: #6b7280;
+      font-size: 12px;
+      background: #ffffff;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .container {
+        width: 82%;
+      }
+
+      .portfolio-grid {
+        grid-template-columns: repeat(2, 280px);
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .container {
+        width: 92%;
+      }
+
+      .navbar {
+        padding: 16px 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 12px;
+        font-size: 10.5px;
+      }
+
+      .section-header {
+        margin-top: 28px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+      }
+
+      .portfolio-grid {
+        grid-template-columns: 280px;
+        justify-content: center;
+      }
+
+      .filter-buttons {
+        gap: 7px;
+      }
+
+      .filter-btn {
+        font-size: 10.5px;
+        padding: 6px 10px;
+      }
+
+      .card {
+        width: 280px;
+      }
+
+      .card img {
+        height: 130px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container navbar">
+      <a href="index.html" class="brand">Putri Khairamulya Ramadhini</a>
+
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="profile-details.html">Profile</a>
+        <a href="project.html">Projects</a>
+        <a href="https://github.com/putrikhairamulyaR" target="_blank">Github</a>
+        <a href="https://www.linkedin.com/in/putri-khairamulya-ramadhini-48692b2a8" target="_blank">LinkedIn</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section>
+      <div class="section-header">
+        <h2>Featured Projects</h2>
+        <span id="project-count">2 projects available</span>
+      </div>
+
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="machine-learning">Machine Learning</button>
+        <button class="filter-btn" data-filter="business-intelligence">Business Intelligence</button>
+        <button class="filter-btn" data-filter="classification">Classification</button>
+        <button class="filter-btn" data-filter="prediction">Prediction</button>
+        <button class="filter-btn" data-filter="eda">EDA</button>
+        <button class="filter-btn" data-filter="dashboard">Dashboard</button>
+        <button class="filter-btn" data-filter="sql">SQL</button>
+      </div>
+
+      <div class="project-group">
+
+        <div class="portfolio-grid">
+          <article class="card project-card" data-category="eda dashboard prediction business-intelligence sql">
+            <a href="superstore.html">
+              <img src="image/global-superstore.jpg" alt="Global Superstore Dashboard">
+
+              <div class="card-content">
+                <div class="tag-list">
+                  <span class="tag">EDA</span>
+                  <span class="tag">Dashboard</span>
+                  <span class="tag">BI</span>
+                  <span class="tag">SQL</span>
+                </div>
+
+                <h3>Global Superstore Dashboard</h3>
+
+                <p>
+                  Sales and profit analysis using EDA, business intelligence,
+                  SQL, and dashboard visualization.
+                </p>
+
+                <div class="card-footer">
+                  <span>2025</span>
+                  <span class="read-more">Read More →</span>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <article class="card project-card" data-category="machine-learning classification prediction eda">
+            <a href="HeartDisease.html">
+              <img src="image/heart.jpg" alt="Heart Disease Prediction">
+
+              <div class="card-content">
+                <div class="tag-list">
+                  <span class="tag">EDA</span>
+                  <span class="tag">ML</span>
+                  <span class="tag">Classification</span>
+                  <span class="tag">Prediction</span>
+                </div>
+
+                <h3>Heart Disease Prediction</h3>
+
+                <p>
+                  Predicting heart disease risk using EDA, feature engineering,
+                  model tuning, and ML classification models.
+                </p>
+
+                <div class="card-footer">
+                  <span>2025</span>
+                  <span class="read-more">Read More →</span>
+                </div>
+              </div>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2025 Putri Khairamulya Ramadhini. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const projectCards = document.querySelectorAll(".project-card");
+    const projectCount = document.getElementById("project-count");
+
+    function updateProjectCount() {
+      const visibleProjects = document.querySelectorAll(".project-card:not(.hidden)").length;
+      projectCount.textContent =
+        visibleProjects + (visibleProjects === 1 ? " project available" : " projects available");
+    }
+
+    filterButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        const filter = button.getAttribute("data-filter");
+
+        filterButtons.forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
+
+        projectCards.forEach(card => {
+          const categories = card.getAttribute("data-category");
+
+          if (filter === "all" || categories.includes(filter)) {
+            card.classList.remove("hidden");
+          } else {
+            card.classList.add("hidden");
+          }
+        });
+
+        updateProjectCount();
+      });
+    });
+
+    updateProjectCount();
+  </script>
+</body>
+</html>

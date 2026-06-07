@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Profile Details | Nama Kamu</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f8fa;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 80%;
+      max-width: 950px;
+      margin: 0 auto;
+    }
+
+    /* HEADER */
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .navbar {
+      width: 80%;
+      max-width: 1100px;
+      margin: 0 auto;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #111827;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #4b5563;
+    }
+
+    .nav-links a:hover {
+      color: #2563eb;
+      transition: 0.2s;
+    }
+
+    /* PAGE HEADER */
+    .page-header {
+      padding: 40px 0 24px;
+    }
+
+    .page-header h1 {
+      font-size: 30px;
+      color: #111827;
+      margin-bottom: 8px;
+    }
+
+    .page-header p {
+      color: #6b7280;
+      font-size: 14px;
+      max-width: 700px;
+    }
+
+    /* CARD */
+    .details-grid {
+      display: grid;
+      gap: 18px;
+      margin-bottom: 40px;
+    }
+
+    .detail-card {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.04);
+      scroll-margin-top: 90px;
+    }
+
+    .detail-card h2 {
+      font-size: 20px;
+      color: #111827;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* ITEM */
+    .detail-item {
+      border-left: 3px solid #2563eb;
+      padding-left: 16px;
+      margin-bottom: 24px;
+    }
+
+    .detail-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .detail-item h3 {
+      font-size: 16px;
+      color: #111827;
+      margin-bottom: 3px;
+    }
+
+    .detail-item span {
+      display: block;
+      color: #6b7280;
+      font-size: 12px;
+      margin-bottom: 10px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .detail-item p {
+      color: #4b5563;
+      font-size: 13.5px;
+      line-height: 1.7;
+      margin-bottom: 12px;
+      text-align: justify;
+    }
+
+    .detail-item strong {
+      color: #2563eb;
+      font-weight: 700;
+    }
+
+    .detail-item ul {
+      margin-left: 18px;
+      padding-left: 4px;
+    }
+
+    .detail-item li {
+      margin-bottom: 8px;
+      color: #4b5563;
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    /* COURSE TAG */
+    .course-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .course-list span {
+      background: #eff6ff;
+      color: #2563eb;
+      border-radius: 999px;
+      padding: 5px 10px;
+      font-size: 11px;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    /* BUTTON */
+    .back-button {
+      display: inline-block;
+      margin-bottom: 45px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: #2563eb;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 13px;
+      transition: 0.2s;
+    }
+
+    .back-button:hover {
+      background: #1d4ed8;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid #e5e7eb;
+      padding: 20px 0;
+      color: #6b7280;
+      font-size: 12px;
+      background: #ffffff;
+    }
+
+    /* MOBILE */
+    @media (max-width: 760px) {
+      .container,
+      .navbar {
+        width: 92%;
+      }
+
+      .navbar {
+        height: auto;
+        padding: 16px 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 12px;
+        font-size: 11px;
+      }
+
+      .page-header {
+        padding: 28px 0 18px;
+      }
+
+      .page-header h1 {
+        font-size: 24px;
+      }
+
+      .detail-card {
+        padding: 18px;
+      }
+
+      .detail-card h2 {
+        font-size: 17px;
+      }
+
+      .detail-item h3 {
+        font-size: 14px;
+      }
+
+      .detail-item p,
+      .detail-item li {
+        font-size: 12.5px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="navbar">
+      <a href="index.html" class="brand">Nama Kamu</a>
+
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="https://github.com/putrikhairamulyaR" target="_blank">Github</a>
+        <a href="https://www.linkedin.com/in/putri-khairamulya- ramadhini-48692b2a8" target="_blank">LinkedIn</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="container">
+
+    <!-- HEADER -->
+    <section class="page-header">
+      <h1>Profile Details</h1>
+
+      <p>
+        Ringkasan pendidikan, pengalaman, organisasi, dan kompetisi
+        yang pernah diikuti.
+      </p>
+    </section>
+
+    <!-- CONTENT -->
+    <section class="details-grid">
+
+      <!-- EDUCATION -->
+      <div class="detail-card" id="education">
+        <h2>🎓 Education</h2>
+
+        <div class="detail-item">
+          <h3>Telkom University</h3>
+
+          <span>Informatics • 2020 - 2024</span>
+
+          <div class="course-list">
+            <span>Algorithms</span>
+            <span>Data Structures</span>
+            <span>Machine Learning</span>
+            <span>Artificial Intelligence</span>
+            <span>Database Systems</span>
+            <span>OOP</span>
+            <span>Probability & Statistics</span>
+            <span>Discrete Mathematics</span>
+            <span>Calculus</span>
+            <span>Social Network Analysis</span>
+            <span>Data Visualization</span>
+            <span>NLP</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXPERIENCE -->
+      <div class="detail-card" id="experience">
+        <h2>💼 Experience</h2>
+
+        <!-- FIT CHATBOT -->
+        <div class="detail-item">
+          <h3>FIT Chatbot</h3>
+
+          <span>Project Experience • Sep 2025 - Dec 2026</span>
+
+          <p>
+            Contributed to the development of an
+            <strong>LLM-powered chatbot</strong> by improving embedding workflows,
+            implementing monitoring systems, and supporting
+            <strong>data-driven optimization</strong>.
+          </p>
+
+          <ul>
+            <li>
+              Integrated <strong>Large Language Model (LLM)</strong>
+              capabilities into the chatbot system.
+            </li>
+
+            <li>
+              Implemented automated
+              <strong>sentiment analysis</strong>
+              for analyzing user responses.
+            </li>
+
+            <li>
+              Built an <strong>analytics dashboard</strong>
+              for monitoring chatbot access and usage data.
+            </li>
+
+            <li>
+              Designed and managed an
+              <strong>SQL database</strong>
+              to store interaction and reporting data.
+            </li>
+
+            <li>
+              Improved chatbot performance through
+              <strong>indexing optimization</strong>.
+            </li>
+
+            <li>
+              Developed  <strong>CRUD functionality  and panel</strong> for user management
+              in the admin panel and management data.
+            </li>
+
+            <li>
+              Implemented security controls to prevent flooding
+              and unauthorized access attempts.
+            </li>
+          </ul>
+        </div>
+
+        <!-- INTERNSHIP -->
+        <div class="detail-item">
+        <h3>Telkom Indonesia</h3>
+
+        <span>Internship • Jun 2025 - Sep 2025</span>
+
+        <p>
+            Assisted in developing an automated scheduling and leave request
+            management system through
+            <strong>data analysis</strong>,
+            <strong>data visualization</strong>,
+            dashboard development, and
+            <strong>SQL-based data management</strong>
+            to support operational efficiency and scheduling evaluation.
+        </p>
+
+        <ul>
+            <li>
+            Analyzed <strong>24/7 agent scheduling data</strong> using Python
+            to identify workload patterns, peak leave request dates,
+            and scheduling trends.
+            </li>
+
+            <li>
+            Performed <strong>data visualization</strong> to evaluate leave request
+            patterns, shift distribution, and scheduling outcomes.
+            </li>
+
+            <li>
+            Developed an <strong>analytics dashboard</strong> to monitor
+            scheduling distribution, identify high-demand leave periods,
+            and support <strong>data-driven decision making</strong>.
+            </li>
+
+            <li>
+            Designed and implemented an
+            <strong>SQL-based database</strong>
+            for automated scheduling and leave request management.
+            </li>
+
+            <li>
+            Built user management features connected to the database
+            to improve monitoring, administrative efficiency,
+            and data control.
+            </li>
+
+            <li>
+            Analyzed and validated scheduling system outputs
+            to support continuous improvement and scheduling accuracy.
+            </li>
+
+            <li>
+            Developed data management features including
+            schedule export/download, leave request recap,
+            and full CRUD operations for reporting and monitoring purposes.
+            </li>
+        </ul>
+        </div>
+
+        <!-- PRACTICUM ASSISTANT -->
+        <div class="detail-item">
+          <h3>Practicum Assistant</h3>
+
+          <span>Operating Systems Laboratory • Sep 2025 - Jan 2026</span>
+
+          <p>
+            Guided students in learning Operating Systems using
+            Ubuntu Debian-based environments, assisted laboratory sessions,
+            evaluated assignments, and provided technical mentoring.
+          </p>
+        </div>
+      </div>
+
+      <!-- ORGANIZATION -->
+      <div class="detail-card" id="organization">
+        <h2>👥 Organization</h2>
+
+        <div class="detail-item">
+          <h3>Central Computer Improvement (Data Research Group)</h3>
+
+          <span>Member • 2025</span>
+
+          <p>
+            Participated in learning sessions focused on
+            <strong>EDA</strong>,
+            <strong>Machine Learning</strong>,
+            <strong>Deep Learning</strong>,
+            and <strong>Neural Networks</strong>.
+            Built models using ANN, CNN, and LSTM with TensorFlow.
+          </p>
+        </div>
+      </div>
+
+      <!-- COMPETITION -->
+      <div class="detail-card" id="competition">
+        <h2>🏆 Competition</h2>
+
+        <div class="detail-item">
+          <h3>CCI Summit</h3>
+
+          <span>CCI Telkom University • 2025</span>
+
+          <p>
+            Conducted <strong>Exploratory Data Analysis (EDA)</strong>,
+            data preprocessing, and implemented a
+            <strong>Gradient Boosting</strong> model to predict income classification.
+
+            Evaluated model performance using
+            <strong>Cross Validation</strong>,
+            <strong>Confusion Matrix</strong>,
+            and <strong>F1-Score</strong>.
+          </p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- BUTTON -->
+    <a href="index.html" class="back-button">
+      Back to Portfolio
+    </a>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      © 2025 Putri Khairamulya R. All rights reserved.
+    </div>
+  </footer>
+
+</body>
+</html>

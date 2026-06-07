@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Portfolio | Putri Khairamulya Ramadhini</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f8fa;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+    }
+
+    /* HEADER */
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .navbar {
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      color: #111827;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-size: 14px;
+      font-weight: 700;
+      color: #374151;
+    }
+
+    .nav-links a:hover {
+      color: #2563eb;
+      transition: 0.2s;
+    }
+
+    /* PROFILE */
+    .profile-section {
+      padding: 60px 0 36px;
+    }
+
+    .profile-card {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 24px;
+      padding: 34px;
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 34px;
+      align-items: center;
+      box-shadow: 0 14px 35px rgba(15, 23, 42, 0.06);
+    }
+
+    .profile-photo img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 20px;
+      background: #f3f4f6;
+    }
+
+    .section-label {
+      display: inline-block;
+      color: #2563eb;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      margin-bottom: 12px;
+    }
+
+    .profile-content p {
+      color: #4b5563;
+      font-size: 16px;
+      max-width: 780px;
+      margin-bottom: 22px;
+    }
+
+    .profile-icons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .profile-icon-card {
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 16px;
+      transition: 0.25s ease;
+    }
+
+    .profile-icon-card:hover {
+      background: #eff6ff;
+      border-color: #bfdbfe;
+      transform: translateY(-3px);
+    }
+
+    .profile-icon-card .icon {
+      font-size: 26px;
+      margin-bottom: 8px;
+    }
+
+    .profile-icon-card strong {
+      display: block;
+      color: #111827;
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+
+    .profile-icon-card span {
+      color: #6b7280;
+      font-size: 13.5px;
+    }
+
+    /* PROJECTS */
+    .projects-section {
+      margin-bottom: 80px;
+      padding-top: 8px;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      margin-bottom: 24px;
+    }
+
+    .section-header h2 {
+      font-size: 28px;
+      color: #111827;
+    }
+
+    .section-header span {
+      color: #6b7280;
+      font-size: 15px;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 280px));
+      gap: 28px;
+    }
+
+    .card {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 18px;
+      overflow: hidden;
+      transition: 0.25s ease;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.05);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+    }
+
+    .card a {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      object-position: center;
+      background: #f3f4f6;
+    }
+
+    .card-content {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #eff6ff;
+      color: #2563eb;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      padding: 6px 10px;
+      border-radius: 999px;
+    }
+
+    .card h3 {
+      font-size: 19px;
+      color: #111827;
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .card p {
+      color: #4b5563;
+      font-size: 14.5px;
+      margin-bottom: 16px;
+
+      min-height: 96px;
+      max-height: 96px;
+      overflow: hidden;
+
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+    }
+
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #6b7280;
+      font-size: 13.5px;
+      border-top: 1px solid #f0f0f0;
+      padding-top: 14px;
+      margin-top: auto;
+    }
+
+    .read-more {
+      color: #2563eb;
+      font-weight: 700;
+    }
+
+    footer {
+      border-top: 1px solid #e5e7eb;
+      padding: 28px 0;
+      color: #6b7280;
+      font-size: 14px;
+      background: #ffffff;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1000px) {
+      .profile-icons {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .portfolio-grid {
+        grid-template-columns: repeat(2, minmax(0, 280px));
+      }
+    }
+
+    @media (max-width: 900px) {
+      .profile-card {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-photo img {
+        width: 100%;
+        max-width: 260px;
+        height: 260px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .navbar {
+        height: auto;
+        padding: 22px 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 18px;
+        font-size: 13px;
+      }
+
+      .profile-section {
+        padding: 42px 0 34px;
+      }
+
+      .profile-card {
+        padding: 26px;
+      }
+
+      .profile-icons {
+        grid-template-columns: 1fr;
+      }
+
+      .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+      }
+
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+        max-width: 300px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container navbar">
+
+      <a href="index.html" class="brand">
+        Putri Khairamulya Ramadhini
+      </a>
+
+      <nav class="nav-links">
+        <a href="profile-details.html">Profile</a>
+        <a href="project.html">Projects</a>
+
+        <a href="https://github.com/putrikhairamulyaR" target="_blank">
+          Github
+        </a>
+
+        <a href="https://www.linkedin.com/in/putri-khairamulya-ramadhini-48692b2a8" target="_blank">
+          LinkedIn
+        </a>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- PROFILE -->
+    <section class="container profile-section" id="profile">
+
+      <div class="profile-card">
+
+        <div class="profile-photo">
+          <img src="image/profile.jpeg" alt="Foto Profil">
+        </div>
+
+        <div class="profile-content">
+
+          <span class="section-label">
+            Data Analyst & Data Science Enthusiast
+          </span>
+
+          <p>
+            Experienced in data cleaning, exploratory data analysis,
+            machine learning, sentiment analysis, temporal analysis,
+            topic modeling, chatbot systems, data visualization,
+            and SQL database management to support operational
+            and business decision-making.
+          </p>
+
+          <div class="profile-icons">
+
+            <a href="profile-details.html#education" class="profile-icon-card">
+              <div class="icon">🎓</div>
+              <strong>Education</strong>
+              <span>Telkom University</span>
+            </a>
+
+            <a href="profile-details.html#experience" class="profile-icon-card">
+              <div class="icon">💼</div>
+              <strong>Experience</strong>
+              <span>Telkom Indonesia, FIT Telkom University</span>
+            </a>
+
+            <a href="profile-details.html#organization" class="profile-icon-card">
+              <div class="icon">👥</div>
+              <strong>Organization</strong>
+              <span>CCI Telkom University</span>
+            </a>
+
+            <a href="profile-details.html#competition" class="profile-icon-card">
+              <div class="icon">🏆</div>
+              <strong>Competition Experience</strong>
+              <span>CCI Summit - Data Research</span>
+            </a>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="container projects-section" id="projects">
+
+      <div class="section-header">
+        <h2>Featured Projects</h2>
+        <span>3 Projects Available</span>
+      </div>
+
+      <div class="portfolio-grid">
+
+        <!-- PROJECT CARD 1 -->
+        <article class="card">
+
+          <a href="superstore.html">
+
+            <img src="image/globalsuperstore.jpg" alt="Global Superstore Dashboard">
+
+            <div class="card-content">
+
+              <div class="tags">
+                <span class="tag">Data Analysis</span>
+              </div>
+
+              <h3>Global Superstore Dashboard</h3>
+
+              <p>
+                Sales and profit analysis using exploratory data analysis,
+                data visualization, and business insights based on product
+                category, customer segment, and regional performance.
+              </p>
+
+              <div class="card-footer">
+                <span>2025</span>
+
+                <span class="read-more">
+                  Read More
+                </span>
+              </div>
+
+            </div>
+
+          </a>
+
+        </article>
+
+        <!-- PROJECT CARD 2 -->
+        <article class="card">
+
+          <a href="HeartDisease.html">
+
+            <img src="image/heart.jpg" alt="Heart Disease Prediction">
+
+            <div class="card-content">
+
+              <div class="tags">
+                <span class="tag">EDA</span>
+                <span class="tag">Data Preprocessing</span>
+                <span class="tag">Machine Learning</span>
+              </div>
+
+              <h3>Heart Disease Prediction</h3>
+
+              <p>
+                Predicting the likelihood of heart disease using machine learning
+                with K-Nearest Neighbors algorithm based on health-related patient data.
+              </p>
+
+              <div class="card-footer">
+                <span>2025</span>
+
+                <span class="read-more">
+                  Read More
+                </span>
+              </div>
+
+            </div>
+
+          </a>
+
+        </article>
+
+        <!-- PROJECT CARD 3 -->
+        <article class="card">
+          <a href="prediksi rumah.html">
+            <img src="image/rumah.jpg" alt="House Price Prediction">
+            <div class="card-content">
+              <div class="tags">
+                <span class="tag">Regression</span>
+                <span class="tag">Machine Learning</span>
+                <span class="tag">Streamlit Web App</span>
+              </div>
+              <h3>House Price Prediction</h3>
+              <p>
+                Predicting fair market property values using Linear Regression 
+                based on housing specifications, characteristics, and neighborhood quality.
+              </p>
+              <div class="card-footer">
+                <span>2025</span>
+                <span class="read-more">
+                  Read More
+                </span>
+              </div>
+            </div>
+          </a>
+        </article>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      © 2025 Putri Khairamulya Ramadhini. All rights reserved.
+    </div>
+  </footer>
+
+</body>
+
+</html>

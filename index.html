@@ -180,8 +180,8 @@
 
     .portfolio-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 280px));
-      gap: 28px;
+      grid-template-columns: repeat(4, minmax(0, 260px));
+      gap: 20px;
     }
 
     .card {
@@ -250,14 +250,10 @@
       color: #4b5563;
       font-size: 14.5px;
       margin-bottom: 16px;
-
-      min-height: 96px;
-      max-height: 96px;
-      overflow: hidden;
-
       display: -webkit-box;
-      -webkit-line-clamp: 4;
+      -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
+      overflow: hidden;
     }
 
     .card-footer {
@@ -436,7 +432,7 @@
 
       <div class="section-header">
         <h2>Featured Projects</h2>
-        <span>3 Projects Available</span>
+        <span>4 Projects Available</span>
       </div>
 
       <div class="portfolio-grid">
@@ -457,9 +453,7 @@
               <h3>Global Superstore Dashboard</h3>
 
               <p>
-                Sales and profit analysis using exploratory data analysis,
-                data visualization, and business insights based on product
-                category, customer segment, and regional performance.
+                Sales and profit analysis using EDA, business intelligence, SQL, and interactive dashboard visualization to uncover regional insights.
               </p>
 
               <div class="card-footer">
@@ -494,8 +488,7 @@
               <h3>Heart Disease Prediction</h3>
 
               <p>
-                Predicting the likelihood of heart disease using machine learning
-                with K-Nearest Neighbors algorithm based on health-related patient data.
+                Predicting heart disease risk using EDA, feature engineering, model tuning, and machine learning classification algorithms.
               </p>
 
               <div class="card-footer">
@@ -524,11 +517,34 @@
               </div>
               <h3>House Price Prediction</h3>
               <p>
-                Predicting fair market property values using Linear Regression 
-                based on housing specifications, characteristics, and neighborhood quality.
+                Predicting fair market property values using Linear Regression modeling based on housing specifications and neighborhood quality factors.
               </p>
               <div class="card-footer">
                 <span>2025</span>
+                <span class="read-more">
+                  Read More
+                </span>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- PROJECT CARD 4 -->
+        <article class="card">
+          <a href="chatbot FIT.html">
+            <img src="image/chatbot.jpeg" alt="Chatbot FIT" onerror="this.src='image/chatbot.png'">
+            <div class="card-content">
+              <div class="tags">
+                <span class="tag">NLP</span>
+                <span class="tag">LLM</span>
+                <span class="tag">Chatbot</span>
+              </div>
+              <h3>Chatbot FIT</h3>
+              <p>
+                A document-based chatbot designed to centralize guidelines at FIT, utilizing Ollama Qwen Instruct, Qdrant, and sentiment analysis.
+              </p>
+              <div class="card-footer">
+                <span>2026</span>
                 <span class="read-more">
                   Read More
                 </span>

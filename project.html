@@ -35,8 +35,7 @@
     }
 
     .container {
-      width: 64%;
-      max-width: 720px;
+      width: min(1120px, 92%);
       margin: 0 auto;
     }
 
@@ -140,21 +139,29 @@
 
     .portfolio-grid {
       display: grid;
-      grid-template-columns: repeat(2, 280px);
+      grid-template-columns: repeat(4, minmax(0, 260px));
       justify-content: center;
-      gap: 18px;
+      gap: 20px;
       margin-bottom: 55px;
     }
 
     /* CARD */
     .card {
-      width: 280px;
+      width: 100%;
       background: #ffffff;
       border: 1px solid #e5e7eb;
       border-radius: 16px;
       overflow: hidden;
       transition: 0.25s ease;
       box-shadow: 0 8px 18px rgba(15, 23, 42, 0.05);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card a {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
     }
 
     .card:hover {
@@ -172,6 +179,9 @@
 
     .card-content {
       padding: 13px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
     }
 
     .tag-list {
@@ -206,6 +216,10 @@
       font-size: 12px;
       margin-bottom: 11px;
       line-height: 1.55;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
 
     .card-footer {
@@ -216,6 +230,7 @@
       font-size: 11px;
       border-top: 1px solid #f0f0f0;
       padding-top: 10px;
+      margin-top: auto;
     }
 
     .read-more {
@@ -237,13 +252,13 @@
     }
 
     /* RESPONSIVE */
-    @media (max-width: 900px) {
+    @media (max-width: 1000px) {
       .container {
         width: 82%;
       }
 
       .portfolio-grid {
-        grid-template-columns: repeat(2, 280px);
+        grid-template-columns: repeat(2, minmax(0, 280px));
         justify-content: center;
       }
     }
@@ -274,7 +289,7 @@
       }
 
       .portfolio-grid {
-        grid-template-columns: 280px;
+        grid-template-columns: minmax(0, 280px);
         justify-content: center;
       }
 
@@ -288,7 +303,7 @@
       }
 
       .card {
-        width: 280px;
+        width: 100%;
       }
 
       .card img {
@@ -317,7 +332,7 @@
     <section>
       <div class="section-header">
         <h2>Featured Projects</h2>
-        <span id="project-count">2 projects available</span>
+        <span id="project-count">4 projects available</span>
       </div>
 
       <div class="filter-buttons">
@@ -329,6 +344,7 @@
         <button class="filter-btn" data-filter="eda">EDA</button>
         <button class="filter-btn" data-filter="dashboard">Dashboard</button>
         <button class="filter-btn" data-filter="sql">SQL</button>
+        <button class="filter-btn" data-filter="nlp">NLP / Chatbot</button>
       </div>
 
       <div class="project-group">
@@ -336,7 +352,7 @@
         <div class="portfolio-grid">
           <article class="card project-card" data-category="eda dashboard prediction business-intelligence sql">
             <a href="superstore.html">
-              <img src="image/global-superstore.jpg" alt="Global Superstore Dashboard">
+              <img src="image/globalsuperstore.jpg" alt="Global Superstore Dashboard">
 
               <div class="card-content">
                 <div class="tag-list">
@@ -349,8 +365,7 @@
                 <h3>Global Superstore Dashboard</h3>
 
                 <p>
-                  Sales and profit analysis using EDA, business intelligence,
-                  SQL, and dashboard visualization.
+                  Sales and profit analysis using EDA, business intelligence, SQL, and interactive dashboard visualization to uncover regional insights.
                 </p>
 
                 <div class="card-footer">
@@ -376,8 +391,7 @@
                 <h3>Heart Disease Prediction</h3>
 
                 <p>
-                  Predicting heart disease risk using EDA, feature engineering,
-                  model tuning, and ML classification models.
+                  Predicting heart disease risk using EDA, feature engineering, model tuning, and machine learning classification algorithms.
                 </p>
 
                 <div class="card-footer">
@@ -387,6 +401,53 @@
               </div>
             </a>
           </article>
+
+          <article class="card project-card" data-category="machine-learning prediction">
+            <a href="prediksi rumah.html">
+              <img src="image/rumah.jpg" alt="House Price Prediction">
+              <div class="card-content">
+                <div class="tag-list">
+                  <span class="tag">Regression</span>
+                  <span class="tag">ML</span>
+                  <span class="tag">Web App</span>
+                </div>
+                <h3>House Price Prediction</h3>
+                <p>
+                  Predicting fair market property values using Linear Regression modeling based on housing specifications and neighborhood quality factors.
+                </p>
+                <div class="card-footer">
+                  <span>2025</span>
+                  <span class="read-more">Read More →</span>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <article class="card project-card" data-category="machine-learning nlp chatbot">
+            <a href="chatbot FIT.html">
+              <img src="image/chatbot.jpeg" alt="Chatbot FIT" onerror="this.src='image/chatbot.png'">
+
+              <div class="card-content">
+                <div class="tag-list">
+                  <span class="tag">NLP</span>
+                  <span class="tag">LLM</span>
+                  <span class="tag">Chatbot</span>
+                </div>
+
+                <h3>Chatbot FIT</h3>
+
+                <p>
+                  A document-based chatbot designed to centralize guidelines at FIT, utilizing Ollama Qwen Instruct, Qdrant, and sentiment analysis.
+                </p>
+
+                <div class="card-footer">
+                  <span>2026</span>
+                  <span class="read-more">Read More →</span>
+                </div>
+              </div>
+            </a>
+          </article>
+
         </div>
       </div>
     </section>

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>House Price Prediction | Putri Khairamulya Ramadhini</title>
+  <title>House Price Analysis & Prediction | Putri Khairamulya Ramadhini</title>
 
   <style>
     * {
@@ -19,7 +19,8 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Helvetica, Arial, sans-serif;
       background: #f8fafc;
       color: #334155;
       line-height: 1.7;
@@ -41,7 +42,6 @@
       margin: 0 auto;
     }
 
-    /* HEADER */
     header {
       background: #ffffff;
       border-bottom: 1px solid #e5e7eb;
@@ -83,9 +83,8 @@
       transition: 0.2s;
     }
 
-    /* PAGE HEADER */
     .page-header {
-      padding: 32px 0 18px;
+      padding: 38px 0 20px;
       text-align: center;
     }
 
@@ -103,41 +102,38 @@
     }
 
     .page-header h1 {
-      font-size: 28px;
+      font-size: 30px;
       color: #111827;
       line-height: 1.2;
-      margin-bottom: 8px;
+      margin-bottom: 9px;
     }
 
     .page-header p {
       color: #4b5563;
       font-size: 13.5px;
-      max-width: 580px;
+      max-width: 600px;
       margin: 0 auto;
       line-height: 1.7;
     }
 
-    /* HERO IMAGE */
     .hero-image {
       width: 100%;
-      max-width: 380px;
-      height: auto;
-      max-height: 220px;
+      max-width: 430px;
+      height: 240px;
       object-fit: cover;
       object-position: center;
-      border-radius: 12px;
-      margin: 0 auto 32px;
+      border-radius: 14px;
+      margin: 0 auto 28px;
       border: 1px solid #e2e8f0;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
     }
 
-    /* CONTENT CARD */
     .content-card {
       background: #ffffff;
       border: 1px solid #e5e7eb;
       border-radius: 18px;
-      padding: 22px;
-      margin-bottom: 20px;
+      padding: 23px;
+      margin-bottom: 18px;
       box-shadow: 0 8px 20px rgba(15, 23, 42, 0.04);
     }
 
@@ -145,6 +141,12 @@
       font-size: 18px;
       color: #111827;
       margin-bottom: 11px;
+    }
+
+    .content-card h3 {
+      color: #111827;
+      font-size: 15px;
+      margin-bottom: 6px;
     }
 
     .content-card p {
@@ -171,18 +173,188 @@
       color: #1d4ed8;
       padding: 2px 6px;
       border-radius: 4px;
-      font-weight: 600;
+      font-weight: 700;
     }
 
-    /* FEATURE CHIPS */
-    .feature-grid {
+    .snapshot {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .snapshot-item {
+      background: #f8fafc;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 14px 10px;
+      text-align: center;
+    }
+
+    .snapshot-item .number {
+      font-size: 19px;
+      font-weight: 800;
+      color: #111827;
+      display: block;
+    }
+
+    .snapshot-item .label {
+      font-size: 10.5px;
+      color: #64748b;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    .question-list {
+      list-style: none;
+      margin-left: 0 !important;
+      padding-left: 0 !important;
+    }
+
+    .question-list li {
+      position: relative;
+      padding: 11px 12px 11px 37px;
+      margin-bottom: 9px;
+      background: #f8fafc;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+    }
+
+    .question-list li::before {
+      content: "?";
+      position: absolute;
+      left: 11px;
+      top: 10px;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #2563eb;
+      color: #ffffff;
+      border-radius: 50%;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .analysis-item {
+      margin-bottom: 14px;
+    }
+
+    .analysis-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .analysis-item strong {
+      background: transparent;
+      padding: 0;
+      color: #111827;
+    }
+
+    .finding-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .finding {
+      padding: 14px;
+      background: #f8fafc;
+      border: 1px solid #e5e7eb;
+      border-radius: 11px;
+    }
+
+    .finding strong {
+      display: block;
+      background: transparent;
+      padding: 0;
+      color: #111827;
+      margin-bottom: 4px;
+    }
+
+    .finding span {
+      font-size: 12px;
+      line-height: 1.55;
+      color: #64748b;
+    }
+
+    .main-insight {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 14px;
+      padding: 18px;
+      margin-top: 15px;
+    }
+
+    .main-insight .insight-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 800;
+      color: #2563eb;
+      margin-bottom: 5px;
+    }
+
+    .main-insight h3 {
+      font-size: 17px;
+      color: #1e3a8a;
+      margin-bottom: 6px;
+    }
+
+    .main-insight p {
+      margin-bottom: 0;
+      color: #334155;
+    }
+
+    .impact-box {
+      background: #111827;
+      color: #ffffff;
+      border-radius: 15px;
+      padding: 21px;
+      margin-top: 14px;
+    }
+
+    .impact-box h3 {
+      font-size: 17px;
+      margin-bottom: 8px;
+      color: #ffffff;
+    }
+
+    .impact-box p {
+      color: #d1d5db;
+      margin-bottom: 10px;
+      font-size: 13.5px;
+    }
+
+    .impact-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .project-link {
+      display: inline-block;
+      padding: 9px 15px;
+      border-radius: 10px;
+      font-size: 12.5px;
+      font-weight: 700;
+      background: #2563eb;
+      color: #ffffff;
+      margin-top: 6px;
+      transition: 0.2s;
+    }
+
+    .project-link:hover {
+      background: #1d4ed8;
+    }
+
+    .tools-list {
       display: flex;
       flex-wrap: wrap;
       gap: 9px;
-      margin: 14px 0 18px;
+      margin-top: 8px;
     }
 
-    .feature-grid span,
     .tools-list span {
       background: #eff6ff;
       color: #2563eb;
@@ -193,109 +365,107 @@
       font-weight: 700;
     }
 
-    /* TOOLS */
-    .tools-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-      margin-top: 8px;
+    .github-section {
+      text-align: center;
     }
 
-    /* RESULTS */
-    .result-image {
-      width: 85%;
-      max-width: 640px;
-      margin: 16px auto 20px;
-      border-radius: 14px;
-      border: 1px solid #e5e7eb;
-      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+    .github-section p {
+      max-width: 540px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    .result-table-wrapper {
-      overflow-x: auto;
-      margin: 16px 0 18px;
+    .streamlit-section {
+      text-align: center;
     }
 
-    .result-table {
+    .streamlit-section p {
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .streamlit-image {
       width: 100%;
-      border-collapse: collapse;
-      font-size: 12.5px;
-      color: #374151;
+      max-width: 680px;
+      height: auto;
+      display: block;
+      margin: 18px auto;
+      border-radius: 14px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 10px rgba(15, 23, 42, 0.08);
     }
 
-    .result-table th {
+    .deployment-box {
       background: #eff6ff;
-      color: #1e3a8a;
-      font-weight: 800;
-      padding: 9px;
-      border: 1px solid #dbeafe;
-      text-align: center;
-      white-space: nowrap;
-    }
-
-    .result-table td {
-      padding: 9px;
-      border: 1px solid #e5e7eb;
-      text-align: center;
-      white-space: nowrap;
-    }
-
-    .result-table td:first-child {
-      font-weight: 700;
-      color: #111827;
+      border-left: 5px solid #3b82f6;
+      border-radius: 0 12px 12px 0;
+      padding: 17px 20px;
+      margin-top: 15px;
       text-align: left;
     }
 
-    .result-note {
-      background: #eff6ff;
-      border-left: 4px solid #3b82f6;
-      padding: 16px;
-      border-radius: 0 8px 8px 0;
-      margin-top: 24px;
-      font-size: 14px;
-      line-height: 1.7;
-      color: #1e3a8a;
+    .deployment-box p {
+      margin-bottom: 0;
+      color: #334155;
     }
 
-    .result-note strong {
-      background-color: transparent;
-      color: #1d4ed8;
+    .deployment-box strong {
+      background: transparent;
       padding: 0;
+      color: #2563eb;
     }
 
-    /* BUTTON */
-    .project-link,
+    .results-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 18px;
+      font-size: 12.5px;
+    }
+
+    .results-table th {
+      background: #eff6ff;
+      color: #1e3a8a;
+      font-weight: 800;
+      padding: 11px 10px;
+      border: 1px solid #dbeafe;
+      text-align: center;
+    }
+
+    .results-table td {
+      padding: 11px 10px;
+      border: 1px solid #e5e7eb;
+      color: #4b5563;
+      text-align: center;
+    }
+
+    .results-table td:first-child {
+      text-align: left;
+      font-weight: 700;
+      color: #1f2937;
+    }
+
+    .results-table tr:hover {
+      background: #f8fafc;
+    }
+
     .back-link {
       display: inline-block;
       padding: 9px 15px;
       border-radius: 10px;
       font-size: 12.5px;
       font-weight: 700;
-      transition: 0.2s;
-    }
-
-    .project-link {
-      background: #2563eb;
-      color: #ffffff;
-      margin-top: 6px;
-    }
-
-    .project-link:hover {
-      background: #1d4ed8;
-    }
-
-    .back-link {
-      margin-bottom: 42px;
       background: #ffffff;
       border: 1px solid #d1d5db;
       color: #374151;
+      margin-bottom: 42px;
+      transition: 0.2s;
     }
 
     .back-link:hover {
       background: #f3f4f6;
     }
 
-    /* FOOTER */
     footer {
       border-top: 1px solid #e5e7eb;
       padding: 18px 0;
@@ -304,7 +474,6 @@
       background: #ffffff;
     }
 
-    /* MOBILE */
     @media (max-width: 760px) {
 
       .container,
@@ -355,200 +524,700 @@
         font-size: 13px;
       }
 
-      .result-image {
-        width: 100%;
+      .snapshot {
+        grid-template-columns: 1fr;
       }
 
-      .result-table {
-        font-size: 12px;
+      .finding-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .results-table {
+        font-size: 11px;
+      }
+
+      .results-table th,
+      .results-table td {
+        padding: 8px 5px;
       }
     }
   </style>
+
 </head>
 
 <body>
 
-  <!-- HEADER -->
   <header>
+
     <div class="navbar">
+
       <a href="index.html" class="brand">
         Putri Khairamulya Ramadhini
       </a>
 
       <nav class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="index.html#projects">Projects</a>
-        <a href="https://github.com/putrikhairamulyaR" target="_blank">Github</a>
-        <a href="https://www.linkedin.com/in/putri-khairamulya-ramadhini-48692b2a8" target="_blank">LinkedIn</a>
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="index.html#projects">
+          Projects
+        </a>
+
+        <a href="https://github.com/putrikhairamulyaR" target="_blank">
+          Github
+        </a>
+
+        <a href="https://www.linkedin.com/in/putri-khairamulya-ramadhini-48692b2a8" target="_blank">
+          LinkedIn
+        </a>
+
       </nav>
+
     </div>
+
   </header>
 
-  <!-- MAIN -->
   <main class="container">
 
-    <!-- PAGE HEADER -->
     <section class="page-header">
-      <h1>House Price Prediction</h1>
+
+      <span class="tag">
+        Data Analysis · Machine Learning
+      </span>
+
+      <h1>
+        House Price Analysis & Prediction
+      </h1>
+
       <p>
-        An end-to-end machine learning project to estimate fair market property values using Linear Regression and
-        Streamlit.
+        Analyzed property characteristics to identify the key drivers of
+        house prices and develop a data-driven approach to price prediction.
       </p>
+
     </section>
 
-    <!-- HERO IMAGE -->
-    <img class="hero-image" src="image/rumah.jpg" alt="House Price Prediction">
+    <img class="hero-image" src="image/rumah.jpg" alt="House Price Analysis and Prediction">
 
-    <!-- OVERVIEW -->
     <section class="content-card">
-      <h2>📌 Project Overview</h2>
 
-      <p>
-        <em>"A newer house is not always more expensive, and an older house is not always cheaper."</em>
-      </p>
+      <h2>
+        📊 Project Snapshot
+      </h2>
 
-      <p>
-        In today's real estate market, various developer incentives and marketing strategies can make newly built homes
-        surprisingly affordable. As a result, property prices are influenced by far more than just the age of the house.
-        Factors such as square footage, number of bedrooms, number of bathrooms, lot size, garage capacity, and
-        neighborhood quality often play a much greater role in determining a property's value. Therefore, a data-driven
-        analysis is essential to identify which factors have the strongest impact on house prices and to support more
-        accurate property valuation.
-      </p>
+      <div class="snapshot">
 
-      <p>
-        This project utilizes historical housing data to build a predictive model. It takes into account key property
-        characteristics such as <strong>Square Footage, Lot Size, Year Built, Number of Bedrooms and Bathrooms, Garage
-          Size, and Neighborhood Quality</strong>. By deploying this model via an interactive Streamlit web application,
-        users can easily input these specifications and receive an instant, data-driven price estimation.
-      </p>
-    </section>
+        <div class="snapshot-item">
 
-    <!-- OBJECTIVES -->
-    <section class="content-card">
-      <h2>🎯 Project Objectives</h2>
+          <span class="number">
+            1,000
+          </span>
 
-      <ul>
-        <li>Perform Exploratory Data Analysis (EDA) to identify factors most correlated with house prices.</li>
-        <li>Build and train a <strong>Linear Regression</strong> model to predict continuous property values.</li>
-        <li>Deploy the trained model into a user-friendly <strong>Streamlit Web App</strong> for real-time inference.
-        </li>
-      </ul>
-    </section>
+          <span class="label">
+            Property Records
+          </span>
 
-    <!-- EDA AND ANALYSIS -->
-    <section class="content-card">
-      <h2>🧾 EDA and Features</h2>
+        </div>
 
-      <p>
-        The exploratory data analysis focuses on finding linear correlations between property features and the final
-        house price, analyzing the distribution of house ages, sizes, and neighborhood impact.
-      </p>
+        <div class="snapshot-item">
 
-      <div class="feature-grid">
-        <span>Square Footage</span>
-        <span>Num Bedrooms</span>
-        <span>Num Bathrooms</span>
-        <span>Year Built</span>
-        <span>Lot Size</span>
-        <span>Garage Size</span>
-        <span>Neighborhood Quality</span>
-        <span>Age Category</span>
-        <span>Size Category</span>
-        <span>Lot Category</span>
+          <span class="number">
+            8
+          </span>
+
+          <span class="label">
+            Features
+          </span>
+
+        </div>
+
+        <div class="snapshot-item">
+
+          <span class="number">
+            0
+          </span>
+
+          <span class="label">
+            Missing Values
+          </span>
+
+        </div>
+
       </div>
 
-      <a class="project-link" href="File/EDA%20Rumah.pdf" target="_blank">
+    </section>
+
+    <section class="content-card">
+
+      <h2>
+        ⚠️ The Problem
+      </h2>
+
+      <p>
+        House prices vary across properties, but the factors behind these
+        differences are not always obvious. Property characteristics such
+        as square footage, neighborhood quality, and lot size may contribute
+        differently to the final valuation.
+      </p>
+
+      <p>
+        The challenge was to identify
+        <strong>which characteristics have the greatest influence on house
+          prices</strong> and determine whether these patterns could be used
+        to produce reliable price estimates.
+      </p>
+
+    </section>
+
+    <section class="content-card">
+
+      <h2>
+        🎯 Objective
+      </h2>
+
+      <p>
+        The project was designed to answer the following questions:
+      </p>
+
+      <ul class="question-list">
+
+        <li>
+          <strong>
+            Which property characteristics have the strongest influence
+            on house prices?
+          </strong>
+        </li>
+
+        <li>
+          <strong>
+            Does property size have a greater influence on price than
+            other property characteristics?
+          </strong>
+        </li>
+
+        <li>
+          <strong>
+            How well can these characteristics explain differences in
+            house prices?
+          </strong>
+        </li>
+
+        <li>
+          <strong>
+            Which machine learning model can provide the most accurate
+            house price predictions?
+          </strong>
+        </li>
+
+      </ul>
+
+    </section>
+
+    <section class="content-card">
+
+      <h2>
+        🔎 Approach & Analysis
+      </h2>
+
+      <div class="analysis-item">
+
+        <p>
+
+          <strong>
+            1. Data Quality Analysis
+          </strong>
+
+          <br>
+
+          Validated 1,000 property records across 8 features and checked
+          for missing values, duplicates, and data consistency.
+
+        </p>
+
+      </div>
+
+      <div class="analysis-item">
+
+        <p>
+
+          <strong>
+            2. Feature Distribution Analysis
+          </strong>
+
+          <br>
+
+          Examined the distribution of property characteristics to understand
+          the composition and variation within the dataset.
+
+        </p>
+
+      </div>
+
+      <div class="analysis-item">
+
+        <p>
+
+          <strong>
+            3. Price Driver Analysis
+          </strong>
+
+          <br>
+
+          Analyzed the relationship between property characteristics and
+          house prices to identify the factors with the strongest impact
+          on price variation.
+
+        </p>
+
+      </div>
+
+      <div class="analysis-item">
+
+        <p>
+
+          <strong>
+            4. Correlation Analysis
+          </strong>
+
+          <br>
+
+          Measured relationships between numerical features and house prices
+          to identify the strongest pricing signals.
+
+        </p>
+
+      </div>
+
+      <div class="analysis-item">
+
+        <p>
+
+          <strong>
+            5. Comparative Analysis
+          </strong>
+
+          <br>
+
+          Compared property characteristics across different groups to
+          understand how changes in property attributes correspond to
+          differences in house prices.
+
+        </p>
+
+      </div>
+
+      <div class="analysis-item">
+
+        <p>
+
+          <strong>
+            6. Predictive Modeling
+          </strong>
+
+          <br>
+
+          Compared Linear Regression, Decision Tree, and Random Forest
+          models using MAE, RMSE, and R² to determine the most effective
+          approach for house price prediction.
+
+        </p>
+
+      </div>
+
+    </section>
+
+    <section class="content-card">
+
+      <h2>
+        📈 Results & Insights
+      </h2>
+
+      <p>
+        We compared three machine learning algorithms to predict housing
+        prices: <strong>Linear Regression</strong>,
+        <strong>Decision Tree</strong>, and
+        <strong>Random Forest</strong>.
+        The evaluation showed that factors such as
+        <strong>Square Footage, Neighborhood Quality, and Lot Size</strong>
+        had the most significant impact on the final valuation.
+      </p>
+
+      <table class="results-table">
+
+        <thead>
+
+          <tr>
+
+            <th>
+              Model
+            </th>
+
+            <th>
+              MAE
+            </th>
+
+            <th>
+              RMSE
+            </th>
+
+            <th>
+              R² Score
+            </th>
+
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+          <tr>
+
+            <td>
+              Linear Regression
+            </td>
+
+            <td>
+              8,230.50
+            </td>
+
+            <td>
+              10,078.25
+            </td>
+
+            <td>
+              0.9984
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td>
+              Decision Tree
+            </td>
+
+            <td>
+              22,204.38
+            </td>
+
+            <td>
+              28,041.87
+            </td>
+
+            <td>
+              0.9878
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td>
+              Random Forest
+            </td>
+
+            <td>
+              16,470.59
+            </td>
+
+            <td>
+              19,761.61
+            </td>
+
+            <td>
+              0.9939
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+      <div class="main-insight">
+
+        <div class="insight-label">
+          Key Result
+        </div>
+
+        <h3>
+          Linear Regression Achieved the Best Predictive Performance
+        </h3>
+
+        <p>
+          Linear Regression achieved the lowest
+          <strong>MAE of 8,230.50</strong>, the lowest
+          <strong>RMSE of 10,078.25</strong>, and the highest
+          <strong>R² score of 0.9984</strong> among the three evaluated
+          models.
+        </p>
+
+      </div>
+
+    </section>
+
+    <section class="content-card">
+
+      <h2>
+        💡 Key Insights
+      </h2>
+
+      <div class="finding-grid">
+
+        <div class="finding">
+
+          <strong>
+            Square Footage
+          </strong>
+
+          <span>
+            Property size was identified as one of the strongest factors
+            associated with house price variation.
+          </span>
+
+        </div>
+
+        <div class="finding">
+
+          <strong>
+            Neighborhood Quality
+          </strong>
+
+          <span>
+            Neighborhood quality also showed a significant contribution
+            to differences in property valuation.
+          </span>
+
+        </div>
+
+        <div class="finding">
+
+          <strong>
+            Lot Size
+          </strong>
+
+          <span>
+            Lot size contributed to the variation in final property
+            valuation and provided an additional pricing signal.
+          </span>
+
+        </div>
+
+        <div class="finding">
+
+          <strong>
+            Model Performance
+          </strong>
+
+          <span>
+            Linear Regression outperformed Decision Tree and Random Forest
+            based on MAE, RMSE, and R².
+          </span>
+
+        </div>
+
+      </div>
+
+      <div class="main-insight">
+
+        <div class="insight-label">
+          Main Insight
+        </div>
+
+        <h3>
+          Property Characteristics Can Provide Strong Pricing Signals
+        </h3>
+
+        <p>
+          The results show that house prices can be effectively estimated
+          from property characteristics, with Square Footage, Neighborhood
+          Quality, and Lot Size providing important signals for valuation.
+        </p>
+
+      </div>
+
+    </section>
+
+    <section class="content-card">
+
+      <h2>
+        💭 Why It Matters
+      </h2>
+
+      <p>
+        House price estimation should not rely solely on intuition or
+        subjective judgment. Understanding which property characteristics
+        contribute most to price provides a more
+        <strong>data-driven basis for evaluating property value</strong>.
+      </p>
+
+      <p>
+        The model evaluation also helps determine which approach can
+        translate these relationships into more accurate price estimates.
+      </p>
+
+    </section>
+
+    <section class="content-card">
+
+      <h2>
+        🚀 Impact
+      </h2>
+
+      <div class="impact-box">
+
+        <h3>
+          From Property Data to Price Estimation
+        </h3>
+
+        <p>
+          The project transforms property data into
+          <strong>actionable insights about what influences house
+            prices</strong>, particularly Square Footage, Neighborhood
+          Quality, and Lot Size.
+        </p>
+
+        <p>
+          These insights provide a data-driven basis to
+          <strong>estimate and predict house prices</strong> based on
+          the characteristics of a property, helping users get a
+          reasonable indication of how much a property may be worth.
+        </p>
+
+        <p>
+          With the best-performing model achieving an
+          <strong>R² of 0.9984</strong>, the developed approach demonstrates
+          strong predictive performance on the evaluated dataset and can
+          serve as a foundation for an interactive house price estimation
+          application.
+        </p>
+
+      </div>
+
+    </section>
+
+    <section class="content-card">
+
+      <h2>
+        🧾 EDA & Analysis Report
+      </h2>
+
+      <p>
+        Explore the complete exploratory analysis, including data quality,
+        feature distributions, correlation analysis, pricing patterns,
+        and model evaluation.
+      </p>
+
+      <a class="project-link" href="File/EDA%20and%20Analysis.pdf" target="_blank">
         View Full EDA Report
       </a>
 
     </section>
 
-    <!-- TOOLS -->
     <section class="content-card">
-      <h2>🛠 Tools & Technologies</h2>
+
+      <h2>
+        🛠 Tools & Technologies
+      </h2>
 
       <div class="tools-list">
-        <span>Python</span>
-        <span>Pandas</span>
-        <span>NumPy</span>
-        <span>Matplotlib</span>
-        <span>Seaborn</span>
-        <span>Scikit-Learn</span>
-        <span>Streamlit</span>
-        <span>Joblib</span>
+
+        <span>
+          Python
+        </span>
+
+        <span>
+          Pandas
+        </span>
+
+        <span>
+          NumPy
+        </span>
+
+        <span>
+          Scikit-Learn
+        </span>
+
+        <span>
+          Matplotlib
+        </span>
+
+        <span>
+          Seaborn
+        </span>
+
+        <span>
+          Jupyter Notebook
+        </span>
+
+        <span>
+          Streamlit
+        </span>
+
       </div>
+
     </section>
 
-    <!-- RESULTS -->
-    <section class="content-card">
-      <h2>📈 Results & Insights</h2>
+    <section class="content-card github-section">
+
+      <h2>
+        💻 Project Repository
+      </h2>
 
       <p>
-        We compared three different algorithms to predict housing prices: <strong>Linear Regression</strong>,
-        <strong>Decision Tree</strong>, and <strong>Random Forest</strong>. The evaluation demonstrated that factors
-        like Square Footage, Neighborhood Quality, and Lot Size have the most significant impact on the final valuation.
+        Explore the complete implementation, analysis workflow,
+        preprocessing, model comparison, and prediction process.
       </p>
 
-      <div class="result-table-wrapper">
-        <table class="result-table">
-          <thead>
-            <tr>
-              <th>Model</th>
-              <th>MAE</th>
-              <th>RMSE</th>
-              <th>R² Score</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Linear Regression</td>
-              <td>8,230.50</td>
-              <td>10,078.25</td>
-              <td>0.9984</td>
-            </tr>
-            <tr>
-              <td>Decision Tree</td>
-              <td>22,204.38</td>
-              <td>28,041.87</td>
-              <td>0.9878</td>
-            </tr>
-            <tr>
-              <td>Random Forest</td>
-              <td>16,470.59</td>
-              <td>19,761.61</td>
-              <td>0.9939</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <p class="result-note">
-        <strong>App Deployment:</strong> The best-performing model pipeline was exported using <code>joblib</code> and
-        integrated
-        into a professional Streamlit application, allowing users to get instant housing estimations through an
-        intuitive Enterprise UI.
-      </p>
-
-      <img class="result-image" src="image/tampilan streamlit.jpeg" alt="Streamlit Application Interface">
-
-      <a class="project-link" href="https://github.com/putrikhairamulyaR/prediksi-rumah" target="_blank">
+      <a class="project-link" href="https://github.com/putrikhairamulyaR" target="_blank">
         View Code on GitHub
       </a>
+
     </section>
 
-    <!-- BACK -->
+    <section class="content-card streamlit-section">
+
+      <h2>
+        🚀 Streamlit Application
+      </h2>
+
+      <p>
+        The trained model was integrated into an interactive Streamlit
+        application that allows users to input property characteristics
+        and obtain an estimated house price.
+      </p>
+
+      <img src="image/tampilan streamlit.jpeg" alt="House Price Prediction Streamlit Application"
+        class="streamlit-image">
+
+      <div class="deployment-box">
+
+        <p>
+          <strong>Interactive Prediction:</strong>
+          Users can enter property characteristics and receive an estimated
+          house price directly through the application interface.
+        </p>
+
+      </div>
+
+    </section>
+
     <a class="back-link" href="index.html">
-      Back to Home
+      ← Back to Home
     </a>
 
   </main>
 
-  <!-- FOOTER -->
   <footer>
+
     <div class="container">
-      © 2025 Putri Khairamulya Ramadhini. All rights reserved.
+
+      © 2026 Putri Khairamulya Ramadhini.
+      All rights reserved.
+
     </div>
+
   </footer>
 
 </body>

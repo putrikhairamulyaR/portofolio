@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Telco Customer Churn Analysis &amp; Prediction | Putri Khairamulya Ramadhini</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+</head>
+
+<body>
+
+
+    <header>
+
+        <div class="container navbar">
+
+            <a href="index.html" class="brand">
+                Putri Khairamulya Ramadhini
+            </a>
+
+            <nav class="nav-links">
+
+                <a href="index.html">Home</a>
+
+                <a href="index.html#projects">
+                    Projects
+                </a>
+
+                <a href="https://github.com/putrikhairamulyaR" target="_blank">
+                    Github
+                </a>
+
+                <a href="https://www.linkedin.com/in/putri-khairamulya-ramadhini-48692b2a8" target="_blank">
+                    LinkedIn
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <main class="container">
+
+
+        <!-- HERO -->
+
+        <section class="page-header">
+
+            <span class="tag">
+                Customer Analytics · Machine Learning
+            </span>
+
+            <h1>
+                Telco Customer Churn Analysis &amp; Prediction
+            </h1>
+
+            <p>
+                Diagnosed the behavioral and contractual drivers of customer
+                churn, engineered predictive features, and built a machine
+                learning model that flags at-risk customers before they leave.
+            </p>
+
+        </section>
+
+
+        <!-- HERO IMAGE -->
+
+        <img class="hero-image" src="image/telco.png" alt="Telco Customer Churn Analysis and Prediction">
+
+
+        <section class="content-card">
+
+            <h2>
+                📊 Project Snapshot
+            </h2>
+
+            <div class="snapshot">
+
+                <div class="snapshot-item">
+                    <span class="icon">👥</span>
+                    <span class="number">
+                        7,043
+                    </span>
+
+                    <span class="label">
+                        Customer Records
+                    </span>
+
+                </div>
+
+
+                <div class="snapshot-item">
+                    <span class="icon">⚙️</span>
+                    <span class="number">
+                        33
+                    </span>
+
+                    <span class="label">
+                        Features
+                    </span>
+
+                </div>
+
+
+                <div class="snapshot-item">
+                    <span class="icon">📉</span>
+                    <span class="number">
+                        26.5%
+                    </span>
+
+                    <span class="label">
+                        Churn Rate
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="content-card">
+
+            <h2>
+                ⚠️ The Problem
+            </h2>
+
+            <p>
+                Churn quietly drains revenue in subscription businesses like
+                telecom providers acquiring a new customer costs far more than
+                keeping an existing one, yet the signals that predict who's
+                about to leave are scattered across dozens of account and
+                service attributes.
+            </p>
+
+            <p>
+                The challenge was to isolate
+                <strong>which customer characteristics and behaviors most
+                    strongly predict churn</strong>, and turn those signals into a
+                system that flags at-risk customers before they walk away.
+            </p>
+
+        </section>
+
+        <section class="content-card">
+
+            <h2>
+                🎯 Objective
+            </h2>
+
+            <p>
+                The project was designed to answer the following questions:
+            </p>
+
+            <ul class="question-list">
+
+                <li>
+                    <strong>
+                        Which customer characteristics and service usage patterns
+                        most strongly drive churn?
+                    </strong>
+                </li>
+
+                <li>
+                    <strong>
+                        Does contract type and tenure outweigh pricing alone in
+                        predicting churn?
+                    </strong>
+                </li>
+
+                <li>
+                    <strong>
+                        What reasons do customers most often cite for leaving?
+                    </strong>
+                </li>
+
+                <li>
+                    <strong>
+                        Which machine learning model most reliably flags customers
+                        at risk of churning?
+                    </strong>
+                </li>
+
+            </ul>
+
+        </section>
+
+        <section class="content-card">
+
+            <h2>
+                🔎 Approach &amp; Analysis
+            </h2>
+
+            <div class="analysis-item">
+
+                <p>
+
+                    <strong>
+                        1. Data Quality Analysis
+                    </strong>
+
+                    <br>
+
+                    Audited 7,043 customer records across 33 features checking
+                    missing values, duplicates, label consistency, and logical
+                    consistency between dependent service columns to guarantee
+                    clean inputs downstream.
+
+                </p>
+
+            </div>
+
+            <div class="analysis-item">
+
+                <p>
+
+                    <strong>
+                        2. Exploratory Data Analysis
+                    </strong>
+
+                    <br>
+
+                    Mapped churn distribution, geographic concentration, billing
+                    behavior, demographics, contract types, and tenure to pinpoint
+                    exactly where churn concentrates.
+
+                </p>
+
+            </div>
+
+            <div class="analysis-item">
+
+                <p>
+
+                    <strong>
+                        3. Churn Driver Analysis
+                    </strong>
+
+                    <br>
+
+                    Isolated the customer attributes with the strongest pull on
+                    retention, from tenure and contract type to service usage.
+
+                </p>
+
+            </div>
+
+            <div class="analysis-item">
+
+                <p>
+
+                    <strong>
+                        4. Correlation Analysis
+                    </strong>
+
+                    <br>
+
+                    Quantified relationships between encoded features and churn to
+                    rank the strongest predictive signals tenure, online
+                    security, tech support, and contract type led the pack.
+
+                </p>
+
+            </div>
+
+            <div class="analysis-item">
+
+                <p>
+
+                    <strong>
+                        5. Feature Engineering
+                    </strong>
+
+                    <br>
+
+                    Engineered business-driven features Total Services, Tenure
+                    Bucket, Charge Per Service, Billing Gap, and a High Risk
+                    Contract-Payment flag to sharpen the model's predictive
+                    edge.
+
+                </p>
+
+            </div>
+
+            <div class="analysis-item">
+
+                <p>
+
+                    <strong>
+                        6. Predictive Modeling
+                    </strong>
+
+                    <br>
+
+                    Benchmarked XGBoost, LightGBM, CatBoost, and Logistic
+                    Regression on Accuracy, Precision, Recall, F1-Score, and
+                    ROC-AUC, applying consistent threshold tuning across every
+                    model to find the sharpest churn predictor.
+
+                </p>
+
+            </div>
+
+        </section>
+        <section class="content-card streamlit-section">
+
+            <h2>
+                🚀 Churn Risk Dashboard
+            </h2>
+
+            <p>
+                Of 7,043 customers, 1,869 churned 88.55% on month-to-month
+                contracts, 57.30% paying by electronic check, 74.91% on
+                paperless billing, and 55.48% within their first year. Phone
+                Service was their most common subscription (91%), Fiber optic
+                carried the highest churn among internet types, and 36% had a
+                partner. Built in Power BI, the dashboard filters this exact
+                segment live by contract, payment method, tenure, and
+                internet type down to individual customer records.
+            </p>
+
+            <div class="deployment-box">
+
+                <p>
+                    <strong>Actionable Monitoring:</strong>
+                    Retention teams can pull the exact list of month-to-month,
+                    electronic-check, under-12-month customers on Fiber optic
+                    the segment driving most of the churn instead of
+                    reviewing accounts one by one.
+                </p>
+
+            </div>
+
+            <a class="project-link" href="File/pdf%20churn%20prediction.pdf" target="_blank">
+                View Dashboard Report
+            </a>
+
+        </section>
+        <section class="content-card">
+
+            <h2>
+                📈 Results &amp; Insights
+            </h2>
+
+            <p>
+                Benchmarked four machine learning algorithms head-to-head
+                <strong>XGBoost</strong>, <strong>LightGBM</strong>,
+                <strong>CatBoost</strong>, and <strong>Logistic Regression</strong>
+                to predict customer churn. The evaluation confirmed that
+                <strong>Tenure, Contract Type, and Monthly Charges</strong>
+                drive the bulk of churn risk.
+            </p>
+
+            <div class="chart-container">
+                <div class="chart-header">
+                    <h3>📊 Model Performance Comparison</h3>
+                    <div class="chart-legend">
+                        <div class="legend-item"><span class="legend-color f1"></span> F1-Score</div>
+                        <div class="legend-item"><span class="legend-color auc"></span> ROC-AUC</div>
+                        <div class="legend-item"><span class="legend-color acc"></span> Accuracy</div>
+                    </div>
+                </div>
+                <div class="model-chart-grid">
+                    <div class="model-chart-row">
+                        <div class="model-name-label">XGBoost (tuned)</div>
+                        <div class="model-metrics-bars">
+                            <div class="metric-bar-group">
+                                <span class="metric-bar-title">F1-Score</span>
+                                <div class="metric-bar-track-wrapper">
+                                    <div class="metric-bar-fill-bar f1-fill" style="width: 63.75%"></div>
+                                </div>
+                                <span class="metric-bar-value">63.8%</span>
+                            </div>
+                            <div class="metric-bar-group">
+                                <span class="metric-bar-title">ROC-AUC</span>
+                                <div class="metric-bar-track-wrapper">
+                                    <div class="metric-bar-fill-bar auc-fill" style="width: 85.40%"></div>
+                                </div>
+                                <span class="metric-bar-value">85.4%</span>
+                            </div>
+                            <div class="metric-bar-group">
+                                <span class="metric-bar-title">Accuracy</span>
+                                <div class="metric-bar-track-wrapper">
+                                    <div class="metric-bar-fill-bar acc-fill" style="width: 75.90%"></div>
+                                </div>
+                                <span class="metric-bar-value">75.9%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="model-chart-row">
+                        <div class="model-name-label">CatBoost (tuned)</div>
+                        <div class="model-metrics-bars">
+                            <div class="metric-bar-group">
+                                <span class="metric-bar-title">F1-Score</span>
+                                <div class="metric-bar-track-wrapper">
+                                    <div class="metric-bar-fill-bar f1-fill" style="width: 63.77%"></div>
+                                </div>
+                                <span class="metric-bar-value">63.8%</span>
+                            </div>
+                            <div class="metric-bar-group">
+                                <span class="metric-bar-title">ROC-AUC</span>
+                                <div class="metric-bar-track-wrapper">
+                                    <div class="metric-bar-fill-bar auc-fill" style="width: 85.32%"></div>
+                                </div>
+                                <span class="metric-bar-value">85.3%</span>
+                            </div>
+                            <div class="metric-bar-group">
+                                <span class="metric-bar-title">Accuracy</span>
+                                <div class="metric-bar-track-wrapper">
+                                    <div class="metric-bar-fill-bar acc-fill" style="width: 76.30%"></div>
+                                </div>
+                                <span class="metric-bar-value">76.3%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="model-chart-row">
+                        <div class="model-name-label">LightGBM (tuned)</div>
+                        <div class="model-metrics-bars">
+                            <div class="metric-bar-group">
+                                <span class="metric-bar-title">F1-Score</span>
+                                <div class="metric-bar-track-wrapper">
+                                    <div class="metric-bar-fill-bar f1-fill" style="width: 63.34%"></div>
+                                </div>
+                                <span class="metric-bar-value">63.3%</span>
+                            </div>
+                            <div class="metric-bar-group">
+                                <span class="metric-bar-title">ROC-AUC</span>
+                                <div class="metric-bar-track-wrapper">
+                                    <div class="metric-bar-fill-bar auc-fill" style="width: 85.14%"></div>
+                                </div>
+                                <span class="metric-bar-value">85.1%</span>
+                            </div>
+                            <div class="metric-bar-group">
+                                <span class="metric-bar-title">Accuracy</span>
+                                <div class="metric-bar-track-wrapper">
+                                    <div class="metric-bar-fill-bar acc-fill" style="width: 75.50%"></div>
+                                </div>
+                                <span class="metric-bar-value">75.5%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="model-chart-row">
+                        <div class="model-name-label">Logistic Regression</div>
+                        <div class="model-metrics-bars">
+                            <div class="metric-bar-group">
+                                <span class="metric-bar-title">F1-Score</span>
+                                <div class="metric-bar-track-wrapper">
+                                    <div class="metric-bar-fill-bar f1-fill" style="width: 62.83%"></div>
+                                </div>
+                                <span class="metric-bar-value">62.8%</span>
+                            </div>
+                            <div class="metric-bar-group">
+                                <span class="metric-bar-title">ROC-AUC</span>
+                                <div class="metric-bar-track-wrapper">
+                                    <div class="metric-bar-fill-bar auc-fill" style="width: 84.90%"></div>
+                                </div>
+                                <span class="metric-bar-value">84.9%</span>
+                            </div>
+                            <div class="metric-bar-group">
+                                <span class="metric-bar-title">Accuracy</span>
+                                <div class="metric-bar-track-wrapper">
+                                    <div class="metric-bar-fill-bar acc-fill" style="width: 76.20%"></div>
+                                </div>
+                                <span class="metric-bar-value">76.2%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="result-table-wrapper">
+                <table class="result-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Model
+                            </th>
+
+                            <th>
+                                Accuracy
+                            </th>
+
+                            <th>
+                                Precision
+                            </th>
+
+                            <th>
+                                Recall
+                            </th>
+
+                            <th>
+                                F1-Score
+                            </th>
+
+                            <th>
+                                ROC-AUC
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>
+                                XGBoost (tuned)
+                            </td>
+
+                            <td>
+                                75.9%
+                            </td>
+
+                            <td>
+                                0.5301
+                            </td>
+
+                            <td>
+                                0.7995
+                            </td>
+
+                            <td>
+                                0.6375
+                            </td>
+
+                            <td>
+                                0.8540
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>
+                                LightGBM (tuned)
+                            </td>
+
+                            <td>
+                                75.5%
+                            </td>
+
+                            <td>
+                                0.5256
+                            </td>
+
+                            <td>
+                                0.7968
+                            </td>
+
+                            <td>
+                                0.6334
+                            </td>
+
+                            <td>
+                                0.8514
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>
+                                CatBoost (tuned)
+                            </td>
+
+                            <td>
+                                76.3%
+                            </td>
+
+                            <td>
+                                0.5365
+                            </td>
+
+                            <td>
+                                0.7861
+                            </td>
+
+                            <td>
+                                0.6377
+                            </td>
+
+                            <td>
+                                0.8532
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>
+                                Logistic Regression (tuned)
+                            </td>
+
+                            <td>
+                                76.2%
+                            </td>
+
+                            <td>
+                                0.5358
+                            </td>
+
+                            <td>
+                                0.7594
+                            </td>
+
+                            <td>
+                                0.6283
+                            </td>
+
+                            <td>
+                                0.8490
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+            </div>
+
+            <div class="main-insight key-result">
+
+                <div class="insight-label">
+                    Key Result
+                </div>
+
+                <h3>
+                    CatBoost and XGBoost Achieved the Strongest Predictive Performance
+                </h3>
+
+                <p>
+                    CatBoost and XGBoost delivered the strongest results, hitting
+                    an <strong>F1-Score of 0.638</strong> with
+                    <strong>ROC-AUC near 0.85</strong> reliably separating
+                    customers who will leave from those who will stay, even under
+                    class imbalance.
+                </p>
+
+            </div>
+
+        </section>
+
+        <section class="content-card">
+
+            <h2>
+                💡 Key Insights
+            </h2>
+
+            <div class="finding-grid">
+
+                <div class="finding">
+
+                    <strong>
+                        Tenure
+                    </strong>
+
+                    <span>
+                        Churned customers stuck around for a median of just 10
+                        months a third of the 38-month median for retained
+                        customers.
+                    </span>
+
+                </div>
+
+                <div class="finding">
+
+                    <strong>
+                        Contract Type
+                    </strong>
+
+                    <span>
+                        Month-to-month contracts churn at a markedly higher rate
+                        than one-year or two-year commitments.
+                    </span>
+
+                </div>
+
+                <div class="finding">
+
+                    <strong>
+                        Monthly Charges
+                    </strong>
+
+                    <span>
+                        Churned customers paid more per month ($74.4) than those
+                        who stayed ($61.3) a sign of price sensitivity tied to
+                        perceived value.
+                    </span>
+
+                </div>
+
+                <div class="finding">
+
+                    <strong>
+                        Model Performance
+                    </strong>
+
+                    <span>
+                        CatBoost and XGBoost outpaced LightGBM and Logistic
+                        Regression on F1-Score and ROC-AUC.
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="main-insight general-insight">
+
+                <div class="insight-label">
+                    Main Insight
+                </div>
+
+                <h3>
+                    Customer Behavior Can Provide Strong Churn Signals
+                </h3>
+
+                <p>
+                    Churn can be predicted and pre-empted from tenure,
+                    contract type, and service usage alone, with service
+                    dissatisfaction and competitor offers standing out as the top
+                    reasons customers gave for leaving.
+                </p>
+
+            </div>
+
+        </section>
+
+        <section class="content-card">
+
+            <h2>
+                💭 Why It Matters
+            </h2>
+
+            <p>
+                Retention shouldn't run on gut feel or reactive outreach after a
+                customer has already decided to go. Pinpointing which
+                characteristics drive churn turns retention into a
+                <strong>data-driven, prioritized effort</strong> instead of a
+                guessing game.
+            </p>
+
+            <p>
+                Comparing models also reveals which approach best converts these
+                patterns into a reliable, actionable churn risk score for every
+                customer.
+            </p>
+
+        </section>
+
+        <section class="content-card">
+
+            <h2>
+                🚀 Impact
+            </h2>
+
+            <div class="impact-box">
+
+                <h3>
+                    From Customer Data to Churn Risk Scoring
+                </h3>
+
+                <p>
+                    The project turns raw customer data into
+                    <strong>a ranked list of who's about to leave and why</strong>,
+                    spotlighting tenure, contract type, and monthly charges as the
+                    levers that matter most.
+                </p>
+
+                <p>
+                    Those insights power a system that
+                    <strong>flags and prioritizes at-risk customers</strong> by
+                    behavior, so retention teams can target outreach where it
+                    actually moves the needle.
+                </p>
+
+                <p>
+                    With the top model hitting an
+                    <strong>F1-Score of 0.638</strong> and
+                    <strong>ROC-AUC of 0.854</strong>, the approach proves it can
+                    reliably separate churners from loyal customers and feeds
+                    directly into the Power BI dashboard used to monitor churn
+                    day to day.
+                </p>
+
+            </div>
+
+        </section>
+
+        <section class="content-card">
+
+            <h2>
+                🛠 Tools &amp; Technologies
+            </h2>
+
+            <div class="tools-list">
+
+                <span>
+                    Python
+                </span>
+
+                <span>
+                    Pandas
+                </span>
+
+                <span>
+                    NumPy
+                </span>
+
+                <span>
+                    Scikit-Learn
+                </span>
+
+                <span>
+                    XGBoost
+                </span>
+
+                <span>
+                    LightGBM
+                </span>
+
+                <span>
+                    CatBoost
+                </span>
+
+                <span>
+                    Matplotlib
+                </span>
+
+                <span>
+                    Seaborn
+                </span>
+
+                <span>
+                    Jupyter Notebook
+                </span>
+
+                <span>
+                    Power BI
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+        <section class="content-card github-section">
+
+            <h2>
+                💻 Project Repository
+            </h2>
+
+            <p>
+                Explore the complete implementation, including data validation,
+                EDA, feature engineering, model tuning, and threshold
+                optimization.
+            </p>
+
+            <a class="project-link"
+                href="https://drive.google.com/drive/folders/1c2TUDtx0-4KLE8TqKwgdqZ6hD59Tt910?usp=sharing"
+                target="_blank">
+                View Code
+            </a>
+
+        </section>
+
+
+
+        <!-- BACK -->
+
+        <a class="back-link" href="index.html">
+            Back to Home
+        </a>
+
+
+    </main>
+
+
+    <footer>
+
+        <div class="container">
+
+            © 2026 Putri Khairamulya Ramadhini.
+            All rights reserved.
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

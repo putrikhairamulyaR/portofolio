@@ -75,7 +75,7 @@
       <div class="snapshot">
 
         <div class="snapshot-item">
-
+          <span class="icon">🏠</span>
           <span class="number">
             1,000
           </span>
@@ -87,7 +87,7 @@
         </div>
 
         <div class="snapshot-item">
-
+          <span class="icon">⚙️</span>
           <span class="number">
             8
           </span>
@@ -99,7 +99,7 @@
         </div>
 
         <div class="snapshot-item">
-
+          <span class="icon">✅</span>
           <span class="number">
             0
           </span>
@@ -309,99 +309,112 @@
         had the most significant impact on the final valuation.
       </p>
 
-      <table class="results-table">
+      <div class="chart-container">
+        <div class="chart-header">
+          <h3>📊 Model Performance Comparison</h3>
+          <div class="chart-legend">
+            <div class="legend-item"><span class="legend-color acc"></span> R² Score</div>
+            <div class="legend-item"><span class="legend-color error"></span> MAE</div>
+          </div>
+        </div>
+        <div class="model-chart-grid">
+          <!-- Linear Regression -->
+          <div class="model-chart-row">
+            <div class="model-name-label">Linear Regression</div>
+            <div class="model-metrics-bars">
+              <div class="metric-bar-group">
+                <span class="metric-bar-title">R² Score</span>
+                <div class="metric-bar-track-wrapper">
+                  <div class="metric-bar-fill-bar acc-fill" style="width: 99.84%"></div>
+                </div>
+                <span class="metric-bar-value">99.8%</span>
+              </div>
+              <div class="metric-bar-group">
+                <span class="metric-bar-title">MAE</span>
+                <div class="metric-bar-track-wrapper">
+                  <div class="metric-bar-fill-bar error-fill" style="width: 32.92%"></div>
+                </div>
+                <span class="metric-bar-value">8,230</span>
+              </div>
+            </div>
+          </div>
+          <!-- Random Forest -->
+          <div class="model-chart-row">
+            <div class="model-name-label">Random Forest</div>
+            <div class="model-metrics-bars">
+              <div class="metric-bar-group">
+                <span class="metric-bar-title">R² Score</span>
+                <div class="metric-bar-track-wrapper">
+                  <div class="metric-bar-fill-bar acc-fill" style="width: 99.39%"></div>
+                </div>
+                <span class="metric-bar-value">99.4%</span>
+              </div>
+              <div class="metric-bar-group">
+                <span class="metric-bar-title">MAE</span>
+                <div class="metric-bar-track-wrapper">
+                  <div class="metric-bar-fill-bar error-fill" style="width: 65.88%"></div>
+                </div>
+                <span class="metric-bar-value">16,470</span>
+              </div>
+            </div>
+          </div>
+          <!-- Decision Tree -->
+          <div class="model-chart-row">
+            <div class="model-name-label">Decision Tree</div>
+            <div class="model-metrics-bars">
+              <div class="metric-bar-group">
+                <span class="metric-bar-title">R² Score</span>
+                <div class="metric-bar-track-wrapper">
+                  <div class="metric-bar-fill-bar acc-fill" style="width: 98.78%"></div>
+                </div>
+                <span class="metric-bar-value">98.8%</span>
+              </div>
+              <div class="metric-bar-group">
+                <span class="metric-bar-title">MAE</span>
+                <div class="metric-bar-track-wrapper">
+                  <div class="metric-bar-fill-bar error-fill" style="width: 88.82%"></div>
+                </div>
+                <span class="metric-bar-value">22,204</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-        <thead>
+      <div class="result-table-wrapper">
+        <table class="result-table">
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>MAE</th>
+              <th>RMSE</th>
+              <th>R² Score</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Linear Regression</td>
+              <td>8,230.50</td>
+              <td>10,078.25</td>
+              <td>0.9984</td>
+            </tr>
+            <tr>
+              <td>Decision Tree</td>
+              <td>22,204.38</td>
+              <td>28,041.87</td>
+              <td>0.9878</td>
+            </tr>
+            <tr>
+              <td>Random Forest</td>
+              <td>16,470.59</td>
+              <td>19,761.61</td>
+              <td>0.9939</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-          <tr>
-
-            <th>
-              Model
-            </th>
-
-            <th>
-              MAE
-            </th>
-
-            <th>
-              RMSE
-            </th>
-
-            <th>
-              R² Score
-            </th>
-
-          </tr>
-
-        </thead>
-
-        <tbody>
-
-          <tr>
-
-            <td>
-              Linear Regression
-            </td>
-
-            <td>
-              8,230.50
-            </td>
-
-            <td>
-              10,078.25
-            </td>
-
-            <td>
-              0.9984
-            </td>
-
-          </tr>
-
-          <tr>
-
-            <td>
-              Decision Tree
-            </td>
-
-            <td>
-              22,204.38
-            </td>
-
-            <td>
-              28,041.87
-            </td>
-
-            <td>
-              0.9878
-            </td>
-
-          </tr>
-
-          <tr>
-
-            <td>
-              Random Forest
-            </td>
-
-            <td>
-              16,470.59
-            </td>
-
-            <td>
-              19,761.61
-            </td>
-
-            <td>
-              0.9939
-            </td>
-
-          </tr>
-
-        </tbody>
-
-      </table>
-
-      <div class="main-insight">
+      <div class="main-insight key-result">
 
         <div class="insight-label">
           Key Result
@@ -485,7 +498,7 @@
 
       </div>
 
-      <div class="main-insight">
+      <div class="main-insight general-insight">
 
         <div class="insight-label">
           Main Insight
@@ -670,7 +683,7 @@
     </section>
 
     <a class="back-link" href="index.html">
-      ← Back to Home
+      Back to Home
     </a>
 
   </main>

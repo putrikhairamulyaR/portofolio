@@ -82,7 +82,7 @@
       <div class="snapshot">
 
         <div class="snapshot-item">
-
+          <span class="icon">👥</span>
           <span class="number">
             918
           </span>
@@ -95,7 +95,7 @@
 
 
         <div class="snapshot-item">
-
+          <span class="icon">🩺</span>
           <span class="number">
             11
           </span>
@@ -108,7 +108,7 @@
 
 
         <div class="snapshot-item">
-
+          <span class="icon">🤖</span>
           <span class="number">
             3
           </span>
@@ -347,6 +347,15 @@
 
       </div>
 
+      <div class="main-insight general-insight">
+        <div class="insight-label">Main Insight</div>
+        <h3>Asymptomatic Chest Pain and ST Slope Are Strongest Indicators</h3>
+        <p>
+          The clinical data confirms that patients over 50 showing asymptomatic (ASY) chest pain, flat/downward ST
+          Slopes, or higher Oldpeak values represent the highest risk categories for heart disease.
+        </p>
+      </div>
+
     </section>
 
 
@@ -383,70 +392,101 @@
       </p>
 
 
-      <!-- HIGHLIGHT METRICS -->
 
-      <div class="highlight-metric">
 
-        <div class="metric">
-
-          <strong>
-            89.67%
-          </strong>
-
-          <span>
-            Accuracy
-          </span>
-
+      <div class="chart-container">
+        <div class="chart-header">
+          <h3>📊 Model Performance Comparison</h3>
+          <div class="chart-legend">
+            <div class="legend-item"><span class="legend-color f1"></span> F1-Score</div>
+            <div class="legend-item"><span class="legend-color auc"></span> ROC-AUC</div>
+            <div class="legend-item"><span class="legend-color acc"></span> Accuracy</div>
+          </div>
         </div>
-
-
-        <div class="metric">
-
-          <strong>
-            91.18%
-          </strong>
-
-          <span>
-            Recall
-          </span>
-
+        <div class="model-chart-grid">
+          <!-- XGBoost -->
+          <div class="model-chart-row">
+            <div class="model-name-label">XGBoost</div>
+            <div class="model-metrics-bars">
+              <div class="metric-bar-group">
+                <span class="metric-bar-title">F1-Score</span>
+                <div class="metric-bar-track-wrapper">
+                  <div class="metric-bar-fill-bar f1-fill" style="width: 90.73%"></div>
+                </div>
+                <span class="metric-bar-value">90.7%</span>
+              </div>
+              <div class="metric-bar-group">
+                <span class="metric-bar-title">ROC-AUC</span>
+                <div class="metric-bar-track-wrapper">
+                  <div class="metric-bar-fill-bar auc-fill" style="width: 93.48%"></div>
+                </div>
+                <span class="metric-bar-value">93.5%</span>
+              </div>
+              <div class="metric-bar-group">
+                <span class="metric-bar-title">Accuracy</span>
+                <div class="metric-bar-track-wrapper">
+                  <div class="metric-bar-fill-bar acc-fill" style="width: 89.67%"></div>
+                </div>
+                <span class="metric-bar-value">89.7%</span>
+              </div>
+            </div>
+          </div>
+          <!-- KNN -->
+          <div class="model-chart-row">
+            <div class="model-name-label">KNN</div>
+            <div class="model-metrics-bars">
+              <div class="metric-bar-group">
+                <span class="metric-bar-title">F1-Score</span>
+                <div class="metric-bar-track-wrapper">
+                  <div class="metric-bar-fill-bar f1-fill" style="width: 90.64%"></div>
+                </div>
+                <span class="metric-bar-value">90.6%</span>
+              </div>
+              <div class="metric-bar-group">
+                <span class="metric-bar-title">ROC-AUC</span>
+                <div class="metric-bar-track-wrapper">
+                  <div class="metric-bar-fill-bar auc-fill" style="width: 94.42%"></div>
+                </div>
+                <span class="metric-bar-value">94.4%</span>
+              </div>
+              <div class="metric-bar-group">
+                <span class="metric-bar-title">Accuracy</span>
+                <div class="metric-bar-track-wrapper">
+                  <div class="metric-bar-fill-bar acc-fill" style="width: 89.67%"></div>
+                </div>
+                <span class="metric-bar-value">89.7%</span>
+              </div>
+            </div>
+          </div>
+          <!-- Random Forest -->
+          <div class="model-chart-row">
+            <div class="model-name-label">Random Forest</div>
+            <div class="model-metrics-bars">
+              <div class="metric-bar-group">
+                <span class="metric-bar-title">F1-Score</span>
+                <div class="metric-bar-track-wrapper">
+                  <div class="metric-bar-fill-bar f1-fill" style="width: 88.24%"></div>
+                </div>
+                <span class="metric-bar-value">88.2%</span>
+              </div>
+              <div class="metric-bar-group">
+                <span class="metric-bar-title">ROC-AUC</span>
+                <div class="metric-bar-track-wrapper">
+                  <div class="metric-bar-fill-bar auc-fill" style="width: 93.03%"></div>
+                </div>
+                <span class="metric-bar-value">93.0%</span>
+              </div>
+              <div class="metric-bar-group">
+                <span class="metric-bar-title">Accuracy</span>
+                <div class="metric-bar-track-wrapper">
+                  <div class="metric-bar-fill-bar acc-fill" style="width: 86.96%"></div>
+                </div>
+                <span class="metric-bar-value">87.0%</span>
+              </div>
+            </div>
+          </div>
         </div>
-
-
-        <div class="metric">
-
-          <strong>
-            90.73%
-          </strong>
-
-          <span>
-            F1-Score
-          </span>
-
-        </div>
-
-
-        <div class="metric">
-
-          <strong>
-            93.48%
-          </strong>
-
-          <span>
-            ROC-AUC
-          </span>
-
-        </div>
-
       </div>
-
-
-      <!-- CONFUSION MATRIX -->
-
-      <img class="result-image" src="image/cf-heartdisease.png" alt="Confusion Matrix Heart Disease Model Comparison">
-
-
-      <!-- RESULT TABLE -->
 
       <div class="result-table-wrapper">
 
@@ -579,7 +619,6 @@
 
       </div>
 
-
       <div class="result-note">
 
         <strong>Model Selection:</strong>
@@ -587,6 +626,16 @@
         missed heart disease cases was the priority, as it achieved
         the highest recall of <strong>91.18%</strong>.
 
+      </div>
+
+      <div class="main-insight key-result">
+        <div class="insight-label">Key Result</div>
+        <h3>XGBoost and KNN Outperformed Random Forest in Accuracy</h3>
+        <p>
+          Both XGBoost and KNN achieved the highest test accuracy of <strong>89.67%</strong>, with XGBoost delivering
+          the highest sensitivity/recall of <strong>91.18%</strong>, making it the optimal model for clinical risk
+          screening.
+        </p>
       </div>
 
     </section>
@@ -628,6 +677,10 @@
 
         <span>
           Python
+        </span>
+
+        <span>
+          Power BI
         </span>
 
         <span>
@@ -681,7 +734,7 @@
     <!-- BACK -->
 
     <a class="back-link" href="index.html">
-      ← Back to Home
+      Back to Home
     </a>
 
 
